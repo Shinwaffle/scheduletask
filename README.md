@@ -15,8 +15,7 @@ https://github.com/kuzmoyev/beautiful-date
 `pip install beauitful-date`
 
 You also need an enviroment variable called "SCHEDULE_EMAIL" with your email.
-How to create one on linux as an example: 
-`export SCHEDULE_EMAIL="example@example.org"`
+How to create one on linux as an example: `export SCHEDULE_EMAIL="example@example.org"`
 
 # Roadmap:
 Overall just more customization of the event itself, also have the ability to create recurring tasks. Also, make this a package.
