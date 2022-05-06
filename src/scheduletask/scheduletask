@@ -4,7 +4,7 @@ from gcsa.event import Event
 
 from beautiful_date import *
 
-import sys
+import sys, os
 """
 do a switch case or whatever the fuck?
 
@@ -16,7 +16,7 @@ def main():
     task = sys.argv[1]
     time = sys.argv[2]
     day, month, year = int(D.now().day), int(D.now().month), int(D.now().year)
-    calendar = GoogleCalendar("hubertmazur312@gmail.com")
+    calendar = GoogleCalendar(os.environ['SCHEDULE_EMAIL'])
     event = Event(task,
                  start=(day/M[month]/year)[int(time[:2]):int(time[2:])],
                  location="Operation Hope",
