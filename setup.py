@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="scheduletask-shinwaffle",
+    name="scheduletask",
     version="1.0.0",
     author="Shinwaffle",
     author_email="shinwaffle@gmail.com",

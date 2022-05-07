@@ -1,3 +1,5 @@
 venv/
 credentials.json
 __init__.py
+dist/ 
+src/scheduletask_shinwaffle.egg-info/
