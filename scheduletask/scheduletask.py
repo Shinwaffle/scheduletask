@@ -5,11 +5,7 @@ from gcsa.event import Event
 from beautiful_date import *
 
 import sys, os
-"""
-do a switch case or whatever the fuck?
-
-"""
-def main():
+def do():
     if len(sys.argv) <= 1:
         print('Missing arguments!')
         exit(1)
@@ -24,11 +20,14 @@ def main():
     calendar.add_event(event)
     print('Check your calendar...')
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv)-1 and (sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == '--help' == ''):
         print("Simple commmand line script to create Google Calendar events on the fly to some extent.\n"
             "You will need at least 2 arguments, the task name itself and the time."
             "The first argument should be the task name itself in parantheses, like: \"Testing!\"\n"
             "The second argument is military time, like so: 1900")
         exit(0)
+    do()
+
+if __name__ == '__main__':
     main()

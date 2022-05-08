@@ -1,11 +1,12 @@
-import setuptools
+#!/usr/bin/env python3
+from setuptools import setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+setup(
     name="scheduletask",
-    version="1.0.0",
+    version="1.1.0",
     author="Shinwaffle",
     author_email="shinwaffle@gmail.com",
     description="Create google calendar events from the command line",
@@ -17,7 +18,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    package_s= ["scheduletask"],
+    entry_points = {
+        "console_scripts": ['scheduletask = scheduletask.scheduletask:main']
+    },
     python_requires=">=3.6",
 )

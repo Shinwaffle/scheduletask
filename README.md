@@ -1,5 +1,7 @@
 # scheduletask
 Script to quickly create google calendar events from the command line. I created this script as a means to quickly jot down ideas for later. Pulling up GNOME Calendar and using my moues is *of course* too much work.
+
+I'm working on a PyPI release soon, didn't realize I couldn't just *upluad* it and it works. I thought computers were magic, damnit!
 # Requirements
 
 ## Google Calendar Simple API
