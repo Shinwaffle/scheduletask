@@ -37,3 +37,4 @@ How to create one on Windows (Powershell):
 
 # Roadmap:
 Create some GitHub Actions workflows to automate package publishing alongside testing (For Windows, Linux, and Mac(Soon)).
+Also, add a whole bunch of more features (obviously)
