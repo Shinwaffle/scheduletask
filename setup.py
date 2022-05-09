@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="scheduletask",
-    version="1.1.0",
+    version="2.0.1",
     author="Shinwaffle",
     author_email="shinwaffle@gmail.com",
     description="Create google calendar events from the command line",
@@ -18,7 +18,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_s= ["scheduletask"],
+    packages= ["scheduletask"],
     entry_points = {
         "console_scripts": ['scheduletask = scheduletask.scheduletask:main']
     },
