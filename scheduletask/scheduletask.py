@@ -4,30 +4,39 @@ from gcsa.event import Event
 
 from beautiful_date import *
 
-import sys, os
-def do():
-    if len(sys.argv) <= 1:
-        print('Missing arguments!')
-        exit(1)
-    task = sys.argv[1]
-    time = sys.argv[2]
-    day, month, year = int(D.now().day), int(D.now().month), int(D.now().year)
+import sys
+import os
+import argparse
+
+# This really shouldn't be called "do" lmao
+
+
+def do(args):
+    """The actual main function"""
+    task = args.task
+    time = args.tim
+    # TODO if its malformed, just print the proper error and move on
+    _day, _month, _year = int(D.now().day), int(
+        D.now().month), int(D.now().year)
+    # TODO this will throw two errors, one for missing environment variable and one for missing credentials.json
     calendar = GoogleCalendar(os.environ['SCHEDULE_EMAIL'])
     event = Event(task,
-                 start=(day/M[month]/year)[int(time[:2]):int(time[2:])],
-                 location="Operation Hope",
-                 minutes_before_popup_reminder=30)
+                  start=(_day/M[_month]/_year)[int(time[:2]):int(time[2:])],
+                  location="Operation Hope",
+                  minutes_before_popup_reminder=30)
     calendar.add_event(event)
-    print('Check your calendar...')
+    print(f'Created a task called {task} at the time {time}')
+
 
 def main():
-    if len(sys.argv)-1 and (sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == '--help' == ''):
-        print("Simple commmand line script to create Google Calendar events on the fly to some extent.\n"
-            "You will need at least 2 arguments, the task name itself and the time."
-            "The first argument should be the task name itself in parantheses, like: \"Testing!\"\n"
-            "The second argument is military time, like so: 1900")
-        exit(0)
-    do()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('task', type=str,
+                        help="Task, written between double quotes (\"\")")
+    parser.add_argument('time', type=str,
+                        help="The start time of the task, should be in military time (example: 0900) (9am))")
+    do(parser.parse_args())
+
 
 if __name__ == '__main__':
     main()
+

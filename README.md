@@ -52,6 +52,7 @@ Replace `YOUR_EMAIL` with your actual email.
 # Roadmap:
 How to setup PATH to execute from command line.
 Perhaps provide detailed instructions on getting your `credentials.json`.
+Create a config argument to store remind time, etc.
 Also, timezones seem to be kinda weird with it.
 Create some GitHub Actions workflows to automate package publishing alongside testing (For Windows, Linux, and Mac(Soon)).
 Also, add a whole bunch of more features (obviously) alongside pip automatically installing gcsa and beautiful-date (I'm too dumb to do it right now)
